@@ -24,4 +24,4 @@ This project is a prototype of a hybrid adaptive firewall that combines:
 
 ## Run
 ```bash
-python app.py
+python aprfrwal.py
