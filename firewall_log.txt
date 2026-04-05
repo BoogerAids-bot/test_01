@@ -1,0 +1,47 @@
+Event:
+{'source_ip': '192.168.1.10', 'dest_ip': '10.0.0.5', 'port': 80, 'failed_logins': 0, 'request_count': 20, 'is_known_bad_ip': 0, 'untrusted_file': 0, 'privilege_request': 0}
+Rule Score: 0
+AI Score: 0
+Total Score: 0
+Decision: ALLOW
+Traffic appears normal.
+------------------------------------------------------------
+Event:
+{'source_ip': '45.67.89.10', 'dest_ip': '10.0.0.8', 'port': 22, 'failed_logins': 7, 'request_count': 120, 'is_known_bad_ip': 1, 'untrusted_file': 0, 'privilege_request': 1}
+Rule Score: 165
+AI Score: 40
+Total Score: 205
+Decision: BLOCK
+Reasons:
+- Source IP is in known malicious list
+- Too many failed login attempts
+- Abnormally high request count
+- Privilege escalation attempt detected
+- AI anomaly detector found unusual behavior
+Action blocked due to high risk.
+------------------------------------------------------------
+Event:
+{'source_ip': '192.168.1.22', 'dest_ip': '10.0.0.9', 'port': 443, 'failed_logins': 1, 'request_count': 15, 'is_known_bad_ip': 0, 'untrusted_file': 1, 'privilege_request': 0}
+Rule Score: 20
+AI Score: 0
+Total Score: 20
+Decision: ALLOW
+Reasons:
+- Activity involves untrusted file
+Action allowed, but the event is logged for observation.
+------------------------------------------------------------
+Event:
+{'source_ip': '192.168.1.30', 'dest_ip': '10.0.0.7', 'port': 3389, 'failed_logins': 5, 'request_count': 70, 'is_known_bad_ip': 0, 'untrusted_file': 1, 'privilege_request': 1}
+Rule Score: 80
+AI Score: 0
+Total Score: 80
+Decision: VERIFY
+Reasons:
+- Too many failed login attempts
+- Activity involves untrusted file
+- Privilege escalation attempt detected
+User verification is required for temporary restricted access.
+------------------------------------------------------------
+Override Attempt:
+Temporary access granted for restricted_app_access until 2026-04-05 21:48:42
+============================================================
